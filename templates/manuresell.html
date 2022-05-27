@@ -1,0 +1,27 @@
+{% extends 'body.html' %}
+{% load static %}
+{% block title %}Manure sell{% endblock title %}
+{% block main-content %}  
+<div>
+<p class="flex">
+         <img src="{% static 'media/logo.jpeg' %}" height="150px"/>
+     </p>
+    <fieldset class="padding">
+       <form name="myform" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 style="color:white";>phone no:</h2><h3 >{{manure.phone_number}}</h3>
+            <h2 style="color:white";>type of manure:</h2><h3 >{{manure.type_manure}}</h3>
+            <h2 style="color:white";>description:</h2><h3 >{{manure.description}}</h3>
+            <h2 style="color:white";>quantity:</h2><h3 >{{manure.quantity}}</h3>
+            <h2 style="color:white";>selling_price:</h2><h3 >{{manure.selling_price}}</h3>
+            <h2 style="color:white";>image_upload:</h2><h3 >{{manure.product_img}}</h3>
+            <br> <center>
+            <input type="submit" value="submit" class="button"><br><br>
+            <input type="reset" value="Reset" class="button"></center>
+       </form>
+      </fieldset>
+      {% if form.errors %}
+    <p>username or password not correct</p>
+{% endif %}
+</div>
+{% endblock main-content %} 

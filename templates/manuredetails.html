@@ -1,0 +1,36 @@
+{% extends 'body.html' %}
+{% load static %}
+{% block title %}Manure Details{% endblock title %}
+{% block main-content %} 
+<div class="container my-5">
+ <div class="row">
+ 
+   <table class="table" cellpadding="5" border="5"> 
+    <thread class= "thread-light">
+    <tr>
+       <td>Image</td>
+       <th>type_manure</th>
+       <th>quantity</th> 
+       <th>description</th>
+       <th>selling_price</th>
+       <th>phone number</th>
+    </tr>
+     </thread>
+    <tbody>
+    {% for t in data %}
+    <a href="{% url 'manuredetails' %}" >
+    <tr>
+       <td><img src="{{t.product_img.url}}" alt="" height="100" width="100"></td>
+       <td>{{t.type_manure}}</td>
+       <td>{{t.quantity}}</td>
+       <td>{{t.description}}</td>
+       <td>{{t.selling_price}}</td>
+       <td>{{t.phone_number}}</td>
+    </tr></a>
+    {% endfor %}
+    </tbody>
+    </table>   
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

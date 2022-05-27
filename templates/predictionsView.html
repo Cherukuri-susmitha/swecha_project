@@ -1,0 +1,42 @@
+{% extends 'body.html' %}
+{% load static %}
+{% block title %}Manure Details{% endblock title %}
+{% block main-content %} 
+<div class="container my-5">
+ <div class="row">
+ 
+   <table class="table" cellpadding="5" border="5"> 
+    <thread class= "thread-light">
+    <tr>
+       <td>nitrogen</td>
+       <th>phosporus</th>
+       <th>potassium</th> 
+       <th>tempersture</th>
+       <th>humidity</th>
+       <th>ph</th>
+       <th>rainfall</th>
+       <th>predicted result</th>
+    </tr>
+     </thread>
+    <tbody>
+    {% for t in data_123 %}
+    <a href="{% url 'manuredetails' %}" >
+    <tr>
+       <td><img src="{{t.product_img.url}}" alt="" height="100" width="100"></td>
+       <td>{{t.nitrogen}}</td>
+       <td>{{t.phosporus}}</td>
+       <td>{{t.potassium}}</td>
+       <td>{{t.temperature}}</td>
+       <td>{{t.humidity}}</td>
+       <td>{{t.ph}}</td>
+       <td>{{t.rainfall}}</td>
+       <td>{{t.result}}</td>
+    </tr></a>
+    {% endfor %}
+    </tbody>
+    </table>   
+  </div>
+ </div>
+</div>
+{% endblock main-content %}
+    

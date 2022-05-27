@@ -1,0 +1,41 @@
+{% extends 'body.html' %}
+{% block title %}Prediction Inputs Page{% endblock title %}
+{% load static %}
+{% block main-content %}
+<p class="flex">
+<img src="{% static 'media/logo.jpeg' %}" height="150px"/>
+     </p>
+     
+<fieldset class="padding">
+       <!--{% if result %}
+	<p align="center"><form action="updateDB"  method="post">
+	{% else %}
+	<p align="center"><form action="predict" method="post">
+	{% endif %}-->
+	<p align="center"><form action="predict" method="post">
+        {% csrf_token %}
+        <h2>nitrogen</h2><div><input type="number" name="nitrogen" value="{{temp.nitrogen}}"></div>
+        <h2>phosporus</h2><div><input type="number" name="phosporus" value="{{temp.phosporus}}"></div>
+        <h2>potassium</h2><div><input type="number" name="potassium" value="{{temp.potassium}}"></div>
+        <h2>temperature:</b><input type="double" name="temperature" value='{{temp.temperature}}'><br>
+        <h2>humidity:</b><input type="double" name="humidity" value='{{temp.humidity}}'><br>
+        <h2>ph</h2><div></div><input type="double" name="ph" value="{{temp.ph}}"></div>
+        <h2>rainfall</h2><div><input type="double" name="rainfall" value="{{temp.rainfall}}"></div>
+        <br>
+        <input type="Submit" value="Submit" class="button">
+        
+        
+        <!--{% if result %}
+        <h3>you should grow {{result}}</h3>
+        {% endif %}
+        {% if result %}
+        <h3> if response is ok,shall we save in db</h3>
+        <input type="hidden" name="result" value='{{result}}>
+        <input type="Submit" value="Submit" class="button">
+        {% else %}
+        <input type="Submit" value="Submit" class="button">
+        {% endif %}-->
+    </form>
+ 
+{% endblock main-content %}
+

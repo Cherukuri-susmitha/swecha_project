@@ -1,0 +1,24 @@
+{% extends 'body.html' %}
+{% block title %}home page{% endblock title %}
+{% load static %}
+{% block main-content %}
+<h1 align="center" style="color:red;"><u>Kisan Madhadh<u></h1>
+<p align="center" class="padding">
+         <img src="{% static 'media/logo.jpeg' %}" height="400px"/>
+     </p>
+<div class="flex">
+
+ 	<iframe class="padding"
+    		allow="microphone;"
+    		width="350"
+    		height="430"
+    		src="https://console.dialogflow.com/api-client/demo/embedded/9c445b24-807d-4f1a-8844-413f4ab9a789">
+	</iframe>
+</div>
+<h2>Find Your Location in below Map</h2>   
+            <button onclick="getlocation();"> Show location</button> 
+            <div class="padding">
+	<div class="flex"> 
+            <center><div id="demo" style="width: 1000px; height: 400px;"></center>
+</div> </div>
+{% endblock main-content %}

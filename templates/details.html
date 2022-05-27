@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>details</title></head>
+<body>
+<table class="table" border='4' cellspacing='5' cellpadding="5"> 
+    <thread class= "thread-light">
+    <tr>
+       <th>reg_name</th>
+       <th>number</th>
+        <th>pin_code</th>
+    </tr>
+     </thread>
+    <tbody>
+    {% for d in data %}
+    <tr>
+       <td>{{d.reg_name}}</td>
+       <td>{{d.number}}</td>
+       <td>{{d.pin_code}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </body>
+</html>

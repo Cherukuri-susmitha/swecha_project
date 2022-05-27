@@ -1,0 +1,28 @@
+{% extends 'body.html' %}
+{% load static %}
+{% block title %}login{% endblock title %}
+{% block main-content %}
+<div>
+ <p class="flex">
+         <img src="{% static 'media/logo.jpeg' %}" height="150px"/>
+     </p>
+     <h1 style="color:red;"><center>Kisan Madhadh</center></h1>
+     <fieldset class="padding">
+       <form name="myform" onsubmit="func()" method="post" >
+            {% csrf_token %}
+            <h2 style="color:white";>Name :</h2><h3 >{{form.reg_name}}</h3>
+            <h2 style="color:white";>phone No:</h2><h3 >{{form.number}}</h3>
+            <h2 style="color:white";>PIN No:</h2><h3 >{{form.pin_code}}</h3>
+            <br> <center>
+            <input type="submit" value="submit" class="button"><br><br>
+            <input type="reset" value="Reset" class="button"></center>
+       </form>
+      </fieldset>
+      <script>
+       function func(){
+      alert("Thanks for manure buy request...you will surely get a call shortly");
+      }
+      </script>
+      
+ </div>
+ {% endblock main-content %}
